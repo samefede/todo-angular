@@ -1,0 +1,24 @@
+<div class="titulo"><h1>Ejercicio N°2: Todo List</h1></div>
+<div class="todos">
+  <form (submit)="agregarTodo()">
+    <input
+        type="text"
+        name="inputTodo"
+        placeholder="Ingrese un nuevo elemento a la lista..."
+        class="todo-input"
+        [(ngModel)]="inputTodo"
+    />
+    <input type="submit" value="Agregar" class="todo-submit" />
+  </form>
+  <div *ngFor="let todo of todos; let i = index;" class="todo {{ (todo.completed ? 'done' : '') }}">
+    <div class="id"> {{ i+1 }} </div>
+    <div class="content" (click)="marcarTodo(i)"> {{todo.content}}</div>
+    <button class="eliminar" (click)="eliminarTodo(i)">X</button>
+  </div>
+</div>
+
+
+
+
+
+
